@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	input{display: none;}
+	.chk_3 + label{
+		background-color: #fafbfa;
+		    padding-top: 9px;
+		    padding-bottom: 9px;
+		    border-radius: 50px;
+		    display: inline-block;
+		    position: relative;
+		    margin-right: 30px;
+		    -webkit-transition: all 0.1s ease-in;
+		    transition: all 0.1s ease-in;
+		    width: 50px;
+		    height: 33px;
+
+		    margin-right: 10px;
+	}
+	.chk_3:checked + label:before {
+	    content: ' ';
+	    position: absolute;
+	    left: 26px;
+	    border-radius: 100px;
+	}
+	.chk_3 + label:before {
+	    content: ' ';
+	    position: absolute;
+	    background: white;
+	    top: 1px;
+	    left: 1px;
+	    z-index: 999999;
+	    width: 31px;
+	    -webkit-transition: all 0.1s ease-in;
+	    transition: all 0.1s ease-in;
+	    height: 31px;
+	    border-radius: 100px;
+	    box-shadow: 0 3px 1px rgba(0,0,0,0.05), 0 0px 1px rgba(0,0,0,0.3);
+	}	
+	.chk_3:checked + label:after {
+	    content: ' ';
+	    font-size: 1.5em;
+	    position: absolute;
+	    background: #252626;
+	    box-shadow: 0 0 1px #252626;
+    }	
+	.chk_3 + label:after {
+	    content: ' ';
+	    position: absolute;
+	    top: 0;
+	    -webkit-transition: box-shadow 0.1s ease-in;
+	    transition: box-shadow 0.1s ease-in;
+	    left: 0;
+	    width: 100%;
+	    height: 62%;
+	    border-radius: 100px;
+	    box-shadow: inset 0 0 0 0 #eee, 0 0 1px rgba(0,0,0,0.4);
+    }   
+
+	</style>
+</head>
+<body>
+	<div>
+		<input type="checkbox"  value="0" id="checkbox_c1" class="chk_3">
+		<label for="checkbox_c1"></label>
+	</div>
+<div><input type="checkbox"  id="checkbox_c2" class="chk_3">
+<label for="checkbox_c2"></label></div>
+<div><input type="checkbox"  id="checkbox_c3" class="chk_3">
+<label for="checkbox_c3"></label></div>
+<div><input type="checkbox"  id="checkbox_c4" class="chk_3">
+<label for="checkbox_c4">	
+</label></div>
+
+
+<script type="text/javascript" src="../jquery-1.12.1.min.js"></script>
+<script type="text/javascript">
+	$(".chk_3").click(function(){
+		if($(this).is(":checked")){
+			$(this).val("1")
+		}else{
+			$(this).val(0);
+		}
+	})
+</script>
+</body>
+</html>
